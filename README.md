@@ -4,3 +4,4 @@ Flappy bird written in Java.
 - Game Over Text
 - Point System
 - Inverse Collision Game Mode
+- Slow Down and Speed Up Time
