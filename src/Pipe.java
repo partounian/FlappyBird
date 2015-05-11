@@ -47,7 +47,25 @@ public class Pipe {
         return false;
     }
 
- /*   public boolean inverseCollision(int _x, int _y, int _width, int _height) {
+    public boolean inverseCollision(int _x, int _y, int _width, int _height) {
+
+        int margin = 2;
+
+        if (_x + _width - margin > x && _x + margin < x + width) {
+
+            if (orientation.equals("south") && _y < y + height) {
+                return false;
+            } else if (orientation.equals("north") && _y + _height > y) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+  /*  public boolean inverseCollides(int _x, int _y, int _width, int _height) {
 
         int margin = 2;
 
@@ -56,11 +74,10 @@ public class Pipe {
             if (_y > y + height && _y + _height < y) {
                 return false;
             }
-
             return true;
         }
-
-    }*/
+        return false;
+    } */
 
     public Render getRender() {
         Render r = new Render();
