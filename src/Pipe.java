@@ -47,7 +47,7 @@ public class Pipe {
         return false;
     }
 
-    public boolean inverseCollision(int _x, int _y, int _width, int _height) {
+ /*   public boolean inverseCollision(int _x, int _y, int _width, int _height) {
 
         int margin = 2;
 
@@ -59,7 +59,8 @@ public class Pipe {
 
             return true;
         }
-    }
+
+    }*/
 
     public Render getRender() {
         Render r = new Render();
