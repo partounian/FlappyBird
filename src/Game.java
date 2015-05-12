@@ -145,7 +145,7 @@ public class Game {
     private void checkForCollisions() {
         // Pipe + Bird collision
         for (Pipe pipe : pipes) {
-            if (pipe.inverseCollision(bird.x, bird.y, bird.width, bird.height))
+            if (pipe.inverseCollides(bird.x, bird.y, bird.width, bird.height))
                 gameover = true;
         }
 
