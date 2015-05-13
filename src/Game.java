@@ -1,8 +1,11 @@
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.awt.*;
 
-public class Game {
- 
+//public class Game extends JPanel{
+public class Game{
+    Font f = new Font("Helvetica", Font.BOLD, 24);
+
     public static final int PIPE_DELAY = 100;
 
     private Boolean paused;
@@ -12,7 +15,7 @@ public class Game {
     private int pauseDelay;
     private int restartDelay;
     private int pipeDelay;
-
+ 
     private Bird bird;
     private ArrayList<Pipe> pipes;
     private Keyboard keyboard;
@@ -48,7 +51,7 @@ public class Game {
             return;
 
         if (gameover){
-            gameOverText();
+            //gameOverText();
             restart();
         }
 
@@ -145,7 +148,7 @@ public class Game {
     private void checkForCollisions() {
         // Pipe + Bird collision
         for (Pipe pipe : pipes) {
-            if (pipe.inverseCollides(bird.x, bird.y, bird.width, bird.height))
+            if (pipe.collides(bird.x, bird.y, bird.width, bird.height))
                 gameover = true;
         }
 
@@ -154,9 +157,19 @@ public class Game {
             gameover = true;
             bird.y = App.HEIGHT - 80 - bird.height;
         }
+
+        // Upper Bounds + Bird collision
+        if (bird.y + bird.height < 0) {
+            gameover = true;
+            bird.y = App.HEIGHT - 80 - bird.height;
+        }
    }
-    
-    private void gameOverText(){
-      
+
+    private void gameOverText(Graphics g){
+
+        Graphics2D g2D = (Graphics2D) g;
+
+        g.setFont(f);
+        g.drawString("Game Over", 10, 10);
     }
 }
