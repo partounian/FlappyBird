@@ -2,14 +2,11 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.awt.*;
 
-//public class Game extends JPanel{
 public class Game{
-    Font f = new Font("Helvetica", Font.BOLD, 24);
-
     public static final int PIPE_DELAY = 100;
 
-    private Boolean paused;
-    private Boolean gameover;
+    public Boolean paused;
+    public Boolean gameover;
     private Boolean started;
 
     private int pauseDelay;
@@ -19,6 +16,8 @@ public class Game{
     private Bird bird;
     private ArrayList<Pipe> pipes;
     private Keyboard keyboard;
+
+    GamePanel gamepanel = new GamePanel(1);
 
     public Game() {
         keyboard = Keyboard.getInstance();
@@ -50,10 +49,8 @@ public class Game{
         if (paused)
             return;
 
-        if (gameover){
-            //gameOverText();
+        if (gameover)
             restart();
-        }
 
         bird.update();
         movePipes();
@@ -164,12 +161,4 @@ public class Game{
             bird.y = App.HEIGHT - 80 - bird.height;
         }
    }
-
-    private void gameOverText(Graphics g){
-
-        Graphics2D g2D = (Graphics2D) g;
-
-        g.setFont(f);
-        g.drawString("Game Over", 10, 10);
-    }
 }

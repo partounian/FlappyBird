@@ -4,6 +4,7 @@ public class Pipe {
 
     public int x;
     public int y;
+    public int margin;
     public int width;
     public int height;
     public int speed = 3;
@@ -33,7 +34,7 @@ public class Pipe {
 
     public boolean collides(int _x, int _y, int _width, int _height) {
 
-        int margin = 2;
+        margin = 2;
 
         if (_x + _width - margin > x && _x + margin < x + width) {
 
@@ -49,7 +50,7 @@ public class Pipe {
 
     public boolean inverseCollides(int _x, int _y, int _width, int _height) {
 
-        int margin = 2;
+        margin = 2;
 
         if (_x + _width - margin > x && _x + margin < x + width) {
 
