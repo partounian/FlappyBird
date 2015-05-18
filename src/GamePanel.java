@@ -4,10 +4,12 @@ import java.awt.*;
 public class GamePanel extends JPanel implements Runnable {
  private static final long serialVersionUID = 4909609457314838721L;
  private Game game;
+ private Pipe pipe;
  Font f = new Font("Helvetica", Font.BOLD, 50);
 
 
     public GamePanel() {
+        pipe = new Pipe();
         game = new Game();
         new Thread(this).start();
     }
@@ -39,6 +41,7 @@ public class GamePanel extends JPanel implements Runnable {
             game.paused = true;
             g.setColor(Color.RED);
             g.drawString("Game Over", 100, 100);
+            g.drawString(pipe.points,150, 150);
         }
     }
  

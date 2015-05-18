@@ -7,6 +7,7 @@ public class Pipe {
     public int margin;
     public int width;
     public int height;
+    public int points = 0;
     public int speed = 3;
 
     public String orientation;
@@ -43,6 +44,7 @@ public class Pipe {
             } else if (orientation.equals("north") && _y + _height > y) {
                 return true;
             }
+            points++;
         }
 
         return false;
@@ -61,6 +63,7 @@ public class Pipe {
             } else if (_y > y + height && _y + _height > y) {
                 return true;
             }
+            points++;
         }
 
         return false;
