@@ -28,6 +28,7 @@ public class GamePanel extends JPanel implements Runnable {
         g.setColor(Color.GREEN);
 
         Graphics2D g2D = (Graphics2D) g;
+
         for (Render r : game.getRenders())
             if (r.transform != null)
                 g2D.drawImage(r.image, r.transform, null);
@@ -35,20 +36,12 @@ public class GamePanel extends JPanel implements Runnable {
                 g.drawImage(r.image, r.x, r.y, null);
         
         if (game.gameover) {
-            g.setColor(Color.RED);
             game.paused = true;
+            g.setColor(Color.RED);
             g.drawString("Game Over", 100, 100);
         }
     }
-
-/*    public void gameOverText(Graphics g){
-
-        Graphics2D g2D = (Graphics2D) g;
-
-        g.setFont(f);
-        g.drawString("Game Over", 10, 10);
-    }
-*/    
+ 
     public void run() {
         try {
             while (true) {
