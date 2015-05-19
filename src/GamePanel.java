@@ -9,7 +9,6 @@ public class GamePanel extends JPanel implements Runnable {
 
 
     public GamePanel() {
-        pipe = new Pipe();
         game = new Game();
         new Thread(this).start();
     }
@@ -41,7 +40,7 @@ public class GamePanel extends JPanel implements Runnable {
             game.paused = true;
             g.setColor(Color.RED);
             g.drawString("Game Over", 100, 100);
-            g.drawString(pipe.points,150, 150);
+            g.drawString(Integer.toString(game.points), 150, 150);
         }
     }
  

@@ -9,6 +9,8 @@ public class Game{
     public Boolean gameover;
     private Boolean started;
 
+    public int points = 0;
+
     private int pauseDelay;
     private int restartDelay;
     private int pipeDelay;
